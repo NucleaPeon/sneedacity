@@ -28,7 +28,7 @@
 #include <ctype.h>
 #include <math.h>
 #include <time.h>
-#if HAVE_SYS_TIME_H
+#if HAVE_SYS_TIME_H || defined(__linux__)
 #include <sys/time.h>
 #endif
 #include "sndfile.h"

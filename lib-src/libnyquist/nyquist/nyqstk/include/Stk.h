@@ -51,6 +51,16 @@ typedef uint64_t uintmax_t;
 #include <iostream>
 #include <sstream>
 
+// added by RBD, modified by NP
+#ifdef __linux__
+#ifndef intptr_t
+#include <stdint.h>
+#define intptr_t long
+#endif
+#endif
+
+
+
 using namespace std;
 
 namespace Nyq
@@ -355,10 +365,6 @@ typedef signed short SINT16;
 typedef signed int SINT32;
 typedef float FLOAT32;
 typedef double FLOAT64;
-// added by RBD
-#ifdef __linux__
-#define intptr_t long
-#endif
 
 // The default sampling rate.
 const StkFloat SRATE = 44100.0;
